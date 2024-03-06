@@ -4,8 +4,10 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from "typeorm";
 import { compare } from "bcrypt";
+import { Task } from "./Task";
 
 @Entity("users")
 export class User {
@@ -21,9 +23,6 @@ export class User {
   @Column()
   password: string;
 
-  // @Column({ default: false })
-  // isAdm?: boolean;
-
   @CreateDateColumn({ type: "timestamp" })
   createdAt: Date;
 
@@ -33,4 +32,7 @@ export class User {
   comparePwd = async (recievedPwd: string): Promise<boolean> => {
     return await compare(recievedPwd, this.password);
   };
+
+  @OneToMany(() => Task, (task) => task.user, { onDelete: "CASCADE" })
+  tasks: Task[];
 }

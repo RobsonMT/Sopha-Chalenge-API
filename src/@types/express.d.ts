@@ -1,3 +1,4 @@
+import { Task } from "../entities";
 import { User } from "../entities/User";
 
 declare global {
@@ -5,6 +6,7 @@ declare global {
     interface Request {
       user: User;
       decoded: User;
+      task: Task;
     }
   }
 }

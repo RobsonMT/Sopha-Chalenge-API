@@ -24,12 +24,12 @@ class UserController {
 
   updateUserController = async (req: Request, res: Response) => {
     const updatedUser = await userService.updateUserService(req);
-    return res.status(200).json(updatedUser);
+    return res.status(204).json(updatedUser);
   };
 
   deleteUserController = async (req: Request, res: Response) => {
     const deletedUser = await userService.deleteUserService(req);
-    return res.status(200).json(deletedUser);
+    return res.status(204).json(deletedUser);
   };
 }
 

@@ -15,7 +15,6 @@ const createUserSchema = yup.object().shape({
       return bcrypt.hashSync(value, 10);
     })
     .required(),
-  // isAdm: yup.boolean().default(false).optional(),
 });
 
 export { createUserSchema };
