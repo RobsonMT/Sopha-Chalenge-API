@@ -7,7 +7,9 @@
     "node": ">=17"
   },
   "scripts": {
+    "build": "tsc",
     "dev": "ts-node-dev --inspect --files --rs src/server.ts",
+    "start": "node dist/server.js",
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:create": "typeorm-ts-node-commonjs migration:create",
     "migration:generate": "typeorm-ts-node-commonjs migration:generate -d ./src/data-source.ts",

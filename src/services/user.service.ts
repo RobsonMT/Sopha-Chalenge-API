@@ -34,7 +34,7 @@ class UserService {
     return { status: 200, message: { token } };
   };
 
-  getAllUsersService = async (): Promise<Array<Partial<User>>> => {
+  getAllUsersService = async () => {
     const users = (await userRepository.findAll()).map((user: User) =>
       userWithoutPassword(user)
     );

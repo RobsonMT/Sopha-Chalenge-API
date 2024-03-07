@@ -4,7 +4,7 @@ import { Task, User } from "../entities";
 
 interface ITaskRepository {
   save: (task: Task) => Promise<Task>;
-  findAll: (decoded: User) => Promise<Array<Task>>;
+  findAll: (decoded: User) => Promise<Task[] | null>;
   findOneBy: (payload: object) => Promise<Task | null>;
   update: (id: string, payload: Partial<Task>) => Promise<UpdateResult>;
   delete: (id: string) => Promise<DeleteResult>;

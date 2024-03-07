@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { taskRepository, userRepository } from "../repositories";
+import { taskRepository } from "../repositories";
 
 const getTaskByIdOr404 = async (
   req: Request,

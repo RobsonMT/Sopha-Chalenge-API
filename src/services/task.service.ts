@@ -17,8 +17,7 @@ class TaskService {
   };
 
   updateTaskService = async ({ task, body }: Request) => {
-    await taskRepository.update(task.id, { ...body });
-    return await taskRepository.findOneBy(task);
+    return await taskRepository.update(task.id, { ...body });
   };
 
   deleteTaskService = async ({ task }: Request) => {

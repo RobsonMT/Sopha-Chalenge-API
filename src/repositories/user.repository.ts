@@ -1,11 +1,10 @@
 import { Repository, DeleteResult, UpdateResult } from "typeorm";
 import { AppDataSource } from "../data-source";
-import { IUserRepository } from "../interfaces";
 import { User } from "../entities";
 
-export interface IUserRepository {
+interface IUserRepository {
   save: (user: User) => Promise<User>;
-  findAll: () => Promise<Array<User>>;
+  findAll: () => Promise<User[]>;
   findOneBy: (payload: object) => Promise<User | null>;
   update: (id: string, payload: Partial<User>) => Promise<UpdateResult>;
   delete: (id: string) => Promise<DeleteResult>;
