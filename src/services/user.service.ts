@@ -3,7 +3,7 @@ import { userWithoutPassword } from "../utils";
 import { Request } from "express";
 import { userRepository } from "../repositories";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { IStatusMesage } from "../interfaces";
 
 dotenv.config();
